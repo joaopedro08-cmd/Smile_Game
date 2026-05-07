@@ -43,6 +43,12 @@
         //removemos a imagem do Smile
         imagem.remove();
       }
+      let imagem2 = document.getElementById("imagem2");
+      //se a imagem nao for vazia (se ela existir)
+      if (imagem2 != "") {
+        //removemos a imagem do Smile
+        imagem2.remove();
+      }
     }
 
     //funçao que atualiza o placar
@@ -96,7 +102,13 @@
           //armazena a div aonde Smile está escondido (getElementById)
           const objSorteado = document.getElementById(sorteado);
           //chama a funçao acertou para mostrar a div aonde está o Smile
+          const img = new Image(100);
+          img.id = "imagem2";
+          //altera o atributo src (source) da imagem criada
+          img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Gnome-face-angry.svg/960px-Gnome-face-angry.svg.png";
+          //adiciona a imagem criada na div (obj) escolhida pelo jogador (appendChild)
           acertou(objSorteado);
+          obj.appendChild(img);
         }
         //chama a funçao que atualiza o placar
         atualizaPlacar(acertos, tentativas);
